@@ -12,7 +12,7 @@ import myPlatform
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 
 # 秒杀时间 算盘--软件 browser=浏览器
-times = '2023-09-03 18:08:00'
+times = '2023-09-04 10:08:00'
 # 打开浏览器
 browser = webdriver.Chrome()
 
@@ -74,7 +74,7 @@ while True:
     # 判断是不是到了秒杀时间?
     if now > times:
         # 点击结算按钮
-        while 1 == 1:
+        while True:
             try:
                 if browser.find_element(By.LINK_TEXT, parm.order):
                     print("here")
