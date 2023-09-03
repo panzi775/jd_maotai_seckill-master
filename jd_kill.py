@@ -25,7 +25,7 @@ time.sleep(3)
 
 
 browser.find_element(By.LINK_TEXT, parm.login).click()
-print("登录" + parm.login)
+print(f"登录 ={parm.login}")
 
 if parm.loginWay is not None:
     browser.find_element(By.LINK_TEXT, parm.loginWay).click()
@@ -76,13 +76,22 @@ while True:
         # 点击结算按钮
         while True:
             try:
+                print("正在寻找---立即下单---入口")
                 if browser.find_element(By.LINK_TEXT, parm.order):
-                    print("here")
+                    print("立即下单显示出来了 ")
                     browser.find_element(By.LINK_TEXT, parm.order).click()
                     print(f"主人,结算提交成功,我已帮你抢到商品啦,请及时支付订单")
                     # speaker.Speak(f"主人,结算提交成功,我已帮你抢到商品啦,请及时支付订单")
                     break
+
+                if browser.find_element(By.ID, "pro-operation"):
+                    print("here")
+                    browser.find_element(By.LINK_TEXT, parm.order).click()
+                    print(f"主人,结算提交成功,我已帮你抢到商品啦,请及时支付订单")
+                    speaker.Speak(f"主人,结算提交成功,我已帮你抢到商品啦,请及时支付订单")
+                    pass
             except:
+                print("没有找到下单入口，正在进行下一次查找")
                 pass
         # 点击提交订单按钮
         while True:
