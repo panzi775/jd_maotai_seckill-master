@@ -26,7 +26,7 @@ class PlatformParamsFactory:
                                   _submit="order-submit", _target="驿路惊鸿",
                                   _login_way="扫码登录", )
         elif platform == PlatformName.HUAWEI:
-            return PlatformParams(platform, "https://www.vmall.com/product/10086327529191.html?cid=206781", "请登录",
+            return PlatformParams(platform, "https://www.vmall.com/product/10086009079805.html?cid=54968696", "请登录",
                                   "立即下单", _target="187",
                                   _submit="checkoutSubmit")
         elif platform == PlatformName.T_MALL:

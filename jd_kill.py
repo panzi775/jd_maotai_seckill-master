@@ -1,6 +1,5 @@
 # 导入要使用到的模块(工具)
 import datetime
-import threading
 import time
 
 from selenium import webdriver
@@ -13,7 +12,7 @@ import myPlatform
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 
 # 秒杀时间 算盘--软件 browser=浏览器
-times = '2023-09-02 18:00:00'
+times = '2023-09-03 18:08:00'
 # 打开浏览器
 browser = webdriver.Chrome()
 
