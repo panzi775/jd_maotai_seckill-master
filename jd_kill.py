@@ -30,7 +30,7 @@ print(f"登录 ={parm.login}")
 if parm.loginWay is not None:
     browser.find_element(By.LINK_TEXT, parm.loginWay).click()
 
-wait = WebDriverWait(browser, 300)
+wait = WebDriverWait(browser, 1)
 
 target_string = parm.target
 
@@ -79,7 +79,9 @@ while True:
                 print("正在寻找---立即下单---入口")
                 if browser.find_element(By.LINK_TEXT, parm.order):
                     print("立即下单显示出来了 ")
-                    browser.find_element(By.LINK_TEXT, parm.order).click()
+                    order = wait.until(browser.find_element(By.LINK_TEXT, parm.order))
+                    order.click()
+                    browser.find_element(By.ID, parm.submit)
                     print(f"主人,结算提交成功,我已帮你抢到商品啦,请及时支付订单")
                     # speaker.Speak(f"主人,结算提交成功,我已帮你抢到商品啦,请及时支付订单")
                     break
